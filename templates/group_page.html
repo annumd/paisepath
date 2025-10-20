@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Group</title></head>
+<body>
+  <h2>{{ group.name }} - ₹{{ group.contribution_amount }}</h2>
+  <form method="POST">
+    <input name="amount" placeholder="Contribution" required>
+    <button type="submit">Contribute</button>
+  </form>
+
+  <h3>Your Contributions</h3>
+  <ul>
+    {% for c in contributions %}
+      <li>₹{{ c.amount }} on {{ c.date }}</li>
+    {% endfor %}
+  </ul>
+
+  <a href="/dashboard/{{ user_id }}">Back to Dashboard</a>
+</body>
+</html>
