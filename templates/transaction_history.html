@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>History</title></head>
+<body>
+  <h2>Your Contributions</h2>
+  <ul>
+    {% for t in transactions %}
+      <li>₹{{ t.amount }} - Group ID {{ t.group_id }} on {{ t.date }}</li>
+    {% endfor %}
+  </ul>
+  <a href="/dashboard/{{ transactions[0]['user_id'] }}">Back to Dashboard</a>
+</body>
+</html>
