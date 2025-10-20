@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+  <h2>Your Groups</h2>
+  <ul>
+    {% for group in groups %}
+      <li>
+        {{ group.name }} - ₹{{ group.contribution_amount }}
+        <a href="/group/{{ group.id }}/{{ user_id }}">Enter</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="/create_group">Create New Group</a> |
+  <a href="/history/{{ user_id }}">Transaction History</a>
+</body>
+</html>
